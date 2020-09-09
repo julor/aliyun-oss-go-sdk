@@ -140,7 +140,7 @@ func (client Client) CreateBucket(bucketName string, options ...Option) error {
 	}
 
 	defer resp.Body.Close()
-	return CheckRespCode(resp.StatusCode, []int{http.StatusCreated})
+	return CheckRespCode(resp.StatusCode, []int{http.StatusOK,http.StatusCreated})
 }
 
 // ListBuckets lists buckets of the current account under the given endpoint, with optional filters.
