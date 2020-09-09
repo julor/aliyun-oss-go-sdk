@@ -108,7 +108,7 @@ func (bucket Bucket) DoPutObject(request *PutObjectRequest, options []Option) (*
 		}
 	}
 
-	err = CheckRespCode(resp.StatusCode, []int{http.StatusOK})
+	err = CheckRespCode(resp.StatusCode, []int{http.StatusOK,http.StatusCreated})
 
 	return resp, err
 }
